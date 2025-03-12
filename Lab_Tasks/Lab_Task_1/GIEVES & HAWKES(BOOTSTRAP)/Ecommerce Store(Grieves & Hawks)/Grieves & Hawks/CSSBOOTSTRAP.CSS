@@ -1,0 +1,333 @@
+
+header {
+    background-color: #1c1b1b; /* Dark background */
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #41495d; /* Same as footer background color */
+    padding: 1rem 0; /* Increased padding */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.navbar-brand span {
+    color: white;
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: bold;
+    margin-left: 10px; /* Added margin for spacing */
+}
+
+.navbar-nav .nav-item {
+    margin-right: 25px; /* Increased spacing between items */
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem; /* Adjusted font size */
+    padding: 0.5rem 1rem; /* Added padding for better click area */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #41a1e6; /* Highlight color */
+}
+
+
+
+.luxury-content h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.luxury-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.shop-now-btn {
+    background-color: #ffffff;
+    color: #212121;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.shop-now-btn:hover {
+    background-color: #41a1e6;
+    color: white;
+}
+
+/* Two Background Images Section */
+.two-background-images .background-image-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.two-background-images .background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.two-background-images .content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.two-background-images .background-image-container:hover .content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.two-background-images .background-image-container:hover {
+    transform: scale(1.05);
+}
+
+/* Three Background Images Section */
+.three-background-images .image-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.three-background-images .background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.three-background-images .content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.three-background-images .image-container:hover .content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.three-background-images .image-container:hover {
+    transform: scale(1.05);
+}
+
+/* Horizontal Scrolling Section */
+.scroll-section {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scroll-section .image-container {
+    display: inline-block;
+    width: 33.33%;
+    position: relative;
+    height: 500px;
+    scroll-snap-align: start;
+    margin-right: 10px;
+}
+
+.scroll-section .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scroll-section .button-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.scroll-section .image-container:hover .button-text {
+    color: #41a1e6;
+}
+
+.scroll-section::-webkit-scrollbar {
+    display: none;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #41495d;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-column {
+    flex: 1 1 22%;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-column a:hover {
+    color: #41a1e6;
+}
+
+.footer-column form {
+    margin-bottom: 20px;
+}
+
+.footer-column input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.footer-column button {
+    padding: 10px 20px;
+    background-color: #41a1e6;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footer-column button:hover {
+    background-color: #1d78a2;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: white;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.social-media a:hover {
+    color: #41a1e6;
+}
+
+.country p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .luxury-content h2 {
+        font-size: 36px;
+    }
+
+    .luxury-content p {
+        font-size: 18px;
+    }
+
+    .shop-now-btn {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .two-background-images .background-image-container,
+    .three-background-images .image-container {
+        margin-bottom: 20px;
+    }
+
+    .three-background-images {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        display: block;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-column input,
+    .footer-column button {
+        width: 100%;
+    }
+
+    .scroll-section .image-container {
+        width: 100%; /* Ensure images take up full width on smaller screens */
+    }
+
+    .scroll-section {
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+}
+
+
+
