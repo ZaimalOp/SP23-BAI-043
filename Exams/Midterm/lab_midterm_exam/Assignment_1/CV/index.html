@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Zaimal Zia - CV</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            background-color: #2C3E50; /* Dark blue for a professional header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .header p {
+            font-size: 18px;
+            margin-top: 5px;
+            color: #f4f4f4;
+        }
+        .profile-pic {
+            display: block;
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #2C3E50; /* Matches header color */
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            background: #2C3E50; /* Consistent dark blue for section headers */
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .content {
+            padding: 10px 20px;
+        }
+        .content p {
+            margin: 5px 0;
+        }
+        .skills div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .skills span {
+            flex: 1;
+            font-weight: bold;
+        }
+        .bar {
+            height: 10px;
+            background: #e0e0e0; /* Light gray background for skill bars */
+            border-radius: 5px;
+            width: 80%;
+            position: relative;
+        }
+        .bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #3498DB; /* Medium blue for skill bar fill */
+            border-radius: 5px;
+        }
+        .bar[data-skill="Python"]::after { width: 90%; }
+        .bar[data-skill="Pandas & Numpy"]::after { width: 85%; }
+        .bar[data-skill="Data Analysis"]::after { width: 80%; }
+        .bar[data-skill="SQL"]::after { width: 75%; }
+        .certifications, .experience {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .certification-item, .experience-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .certification-item h3, .experience-item h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .certification-item p, .experience-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .contact-info a {
+            color: #3498DB; /* Medium blue for clickable links */
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid #3498DB; /* Matching border */
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .contact-info a:hover {
+            background: #3498DB; /* Hover background matches link color */
+            color: #fff;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #2C3E50; /* Dark blue footer to match header */
+            color: #fff;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Muhammad Zaimal Zia</h1>
+            <p>Artificial Intelligence Student | Data Analyst</p>
+        </div>
+        <img class="profile-pic" src="20240224_195411.jpg" alt="Profile Picture">
+        
+        <!-- About Me Section -->
+        <div class="section">
+            <h2>About Me</h2>
+            <div class="content">
+                <p>Passionate AI student with a strong background in data science and analytics. Always eager to learn and apply innovative solutions to real-world problems. I thrive in challenging environments and enjoy working on projects that push the boundaries of technology.</p>
+            </div>
+        </div>
+        
+        <!-- Education Section -->
+        <div class="section">
+            <h2>Education</h2>
+            <div class="content">
+                <p><strong>BS Artificial Intelligence</strong> - COMSATS University, Lahore (2022 - Present)</p>
+                <p>Relevant Courses: Machine Learning, Data Structures, Algorithms, Statistics, and Data Visualization.</p>
+            </div>
+        </div>
+        
+        <!-- Experience Section -->
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="content experience">
+                <div class="experience-item">
+                    <h3>Esports Gaming Store Owner</h3>
+                    <p><strong>2021 - Present</strong></p>
+                    <p>Managed and sold gaming services and accounts, ensuring secure transactions and customer satisfaction.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Crypto Trader</h3>
+                    <p><strong>2020 - Present</strong></p>
+                    <p>Expert in Binance trading, analyzing market trends, and executing profitable trades.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>PUBG UC Seller</h3>
+                    <p><strong>2019 - Present</strong></p>
+                    <p>Specialized in selling in-game currency with a focus on secure and reliable transactions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Skills Section -->
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="content skills">
+                <div><span>Python</span> <div class="bar" data-skill="Python"></div></div>
+                <div><span>Pandas & Numpy</span> <div class="bar" data-skill="Pandas & Numpy"></div></div>
+                <div><span>Data Analysis</span> <div class="bar" data-skill="Data Analysis"></div></div>
+                <div><span>SQL</span> <div class="bar" data-skill="SQL"></div></div>
+            </div>
+        </div>
+        
+        <!-- Certifications Section -->
+        <div class="section">
+            <h2>Certifications</h2>
+            <div class="content certifications">
+                <div class="certification-item">
+                    <h3>Certified Data Analyst</h3>
+                    <p>Google Data Analytics</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Python for Data Science</h3>
+                    <p>Coursera</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="section">
+            <h2>Contact</h2>
+            <div class="content">
+                <div class="contact-info">
+                    <a href="mailto:zaimalzia@example.com">Email</a>
+                    <a href="tel:+923331234567">Phone</a>
+                    <a href="https://linkedin.com/in/zaimal-zia-b84228325" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/ZaimalOp" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2023 Muhammad Zaimal Zia. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript for interactivity
+        document.querySelector('.profile-pic').addEventListener('click', () => {
+            alert('Welcome to my CV!');
+        });
+    </script>
+</body>
+</html>

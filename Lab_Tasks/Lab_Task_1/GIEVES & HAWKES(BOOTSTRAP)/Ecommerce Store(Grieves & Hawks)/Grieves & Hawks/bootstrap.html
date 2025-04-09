@@ -1,120 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-    <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gieves & Hawkes Navbar</title>
-    <link rel="stylesheet" href="CSSBOOTSTRAP.CSS">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header>
-      <nav class="nav sticky-top navbar navbar-expand-lg navbar-dark" style="background-color: #41495d; padding: 15px 30px;">
-          <div class="container-fluid">
-              <a class="navbar-brand d-flex align-items-center" href="#">
-                  <img src="white-logo.avif" alt="Gieves & Hawkes Logo" style="height: 50px;">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                  <ul class="navbar-nav gap-3">
-                      <li class="nav-item">
-                          <a class="nav-link text-white fw-semibold" href="#">Ready to Wear</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link text-white fw-semibold" href="#">Made to Measure</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link text-white fw-semibold" href="#">Bespoke</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link text-white fw-semibold" href="#">Military</a>
-                      </li>
-                  </ul>
-              </div>
-              <div class="d-flex align-items-center gap-4 d-none d-lg-block">
-                <a href="#" class="text-white fs-5"><i class="fas fa-search"></i></a>
-                <a href="#" class="text-white fs-5"><i class="fas fa-user"></i></a>
-                <a href="#" class="text-white fs-5"><i class="fas fa-shopping-bag"></i></a>
-            </div>
-            
-          </div>
-      </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gieves & Hawkes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav sticky-top navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="images/white-logo.avif" alt="Gieves & Hawkes Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item"><a class="nav-link" href="#">Ready to Wear</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Made to Measure</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Bespoke</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Military</a></li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center gap-4 d-none d-lg-block">
+          <a href="#" class="text-white fs-5"><i class="fas fa-search"></i></a>
+          <a href="#" class="text-white fs-5"><i class="fas fa-user"></i></a>
+          <a href="#" class="text-white fs-5"><i class="fas fa-shopping-bag"></i></a>
+        </div>
+      </div>
+    </nav>
   </header>
-  
 
-    <!-- Luxury Knitwear Section -->
-<section class="luxury-knitwear position-relative d-flex justify-content-center align-items-center text-center text-white" style="height: 600px;">
-    <div class="luxury-content position-absolute z-index-2">
-      <h2 class="display-4 font-weight-bold mb-3">LUXURY KNITWEAR</h2>
-      <p class="lead mb-4">Final end of season sale</p>
+  <section class="luxury-knitwear">
+    <div class="luxury-content">
+      <h2>LUXURY KNITWEAR</h2>
+      <p>Final end of season sale</p>
       <a href="#" class="btn btn-light btn-lg">Shop Now</a>
     </div>
-    <img src="Knitwear_4.webp" alt="Luxury Knitwear" class="background-image w-100 h-100 object-fit-cover">
+    <img src="images/Knitwear_4.webp" alt="Luxury Knitwear" class="background-image">
   </section>
 
-  <!-- Two Background Images Section -->
-<section class="two-background-images container-fluid py-5">
+  <section class="container-fluid two-images-section">
     <div class="row">
-      <!-- Left Image Section -->
       <div class="col-md-6 mb-4">
-        <div class="background-image-container position-relative">
-          <img src="3093129_005.webp" alt="Made to Measure Event" class="background-img w-100 h-100 object-fit-cover">
-          <div class="content position-absolute bottom-0 start-0 end-0 p-4 text-center text-white">
-            <h2 class="display-4 font-weight-bold mb-3">The Made to Measure Event</h2>
-            <p class="lead mb-4">The personalised process of Made to Measure for less.</p>
+        <div class="image-container">
+          <img src="images/3093129_005.webp" alt="Made to Measure Event">
+          <div class="content">
+            <h2>The Made to Measure Event</h2>
+            <p>The personalised process of Made to Measure for less.</p>
             <a href="#" class="btn btn-light btn-lg">Book Now</a>
           </div>
         </div>
       </div>
-  
-      <!-- Right Image Section -->
       <div class="col-md-6 mb-4">
-        <div class="background-image-container position-relative">
-          <img src="Wedding_Collection.webp" alt="Wedding Edit" class="background-img w-100 h-100 object-fit-cover">
-          <div class="content position-absolute bottom-0 start-0 end-0 p-4 text-center text-white">
-            <h2 class="display-4 font-weight-bold mb-3">Wedding Edit</h2>
-            <p class="lead mb-4">Discover our exclusive wedding collection.</p>
-            <a href="#" class="btn btn-light btn-lg">Discover Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Two Background Images Section -->
-<section class="two-background-images container-fluid py-5">
-    <div class="row">
-      <!-- Left Background Image Section -->
-      <div class="col-md-6 mb-4">
-        <div class="background-image-container position-relative">
-          <img src="Winter_Collection_65fcfd9f-cd5c-4ab7-ab00-d0448bf519fc.jpg" alt="Morse Code" class="background-img w-100 h-100 object-fit-cover">
-          <div class="content position-absolute bottom-0 start-0 end-0 p-4 text-center text-white">
-            <h2 class="display-4 font-weight-bold mb-3">Morse Code</h2>
-            <p class="lead mb-4">Explore the elegance of Morse code style in fashion.</p>
-            <a href="#" class="btn btn-light btn-lg">Book Now</a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Right Background Image Section -->
-      <div class="col-md-6 mb-4">
-        <div class="background-image-container position-relative">
-          <img src="Shirts.webp" alt="Shirts" class="background-img w-100 h-100 object-fit-cover">
-          <div class="content position-absolute bottom-0 start-0 end-0 p-4 text-center text-white">
-            <h2 class="display-4 font-weight-bold mb-3">Shirts</h2>
-            <p class="lead mb-4">Discover our wide collection of shirts tailored for every occasion.</p>
+        <div class="image-container">
+          <img src="images/Wedding_Collection.webp" alt="Wedding Edit">
+          <div class="content">
+            <h2>Wedding Edit</h2>
+            <p>Discover our exclusive wedding collection.</p>
             <a href="#" class="btn btn-light btn-lg">Discover Now</a>
           </div>
         </div>
@@ -122,37 +70,31 @@
     </div>
   </section>
 
-  <!-- Three Background Images Section -->
-<section class="three-background-images container-fluid py-5">
+  <section class="container-fluid three-images-section">
     <div class="row">
-      <!-- Suits Section -->
       <div class="col-md-4 mb-4">
-        <div class="image-container position-relative">
-          <img src="suits.webp" alt="Suits" class="background-img w-100 h-100 object-fit-cover">
-          <div class="content position-absolute bottom-0 start-0 end-0 p-4 text-center text-white">
-            <h2 class="display-4 font-weight-bold mb-3">Suits</h2>
+        <div class="image-container">
+          <img src="images/suits.webp" alt="Suits">
+          <div class="content">
+            <h2>Suits</h2>
             <a href="#" class="btn btn-light btn-lg">Shop Now</a>
           </div>
         </div>
       </div>
-  
-      <!-- Accessories Section -->
       <div class="col-md-4 mb-4">
-        <div class="image-container position-relative">
-          <img src="Accessories_b667ad34-bc84-4465-ae32-7c99fa45b0b8.webp" alt="Accessories" class="background-img w-100 h-100 object-fit-cover">
-          <div class="content position-absolute bottom-0 start-0 end-0 p-4 text-center text-white">
-            <h2 class="display-4 font-weight-bold mb-3">Accessories</h2>
+        <div class="image-container">
+          <img src="images/Accessories.webp" alt="Accessories">
+          <div class="content">
+            <h2>Accessories</h2>
             <a href="#" class="btn btn-light btn-lg">Shop Now</a>
           </div>
         </div>
       </div>
-  
-      <!-- Autumn Winter 2024 Collection Section -->
       <div class="col-md-4 mb-4">
-        <div class="image-container position-relative">
-          <img src="240730_GIEVES_AND_HAWKES_AW24_SHOT_21_0016_F1_01a6bc2e-56b2-4a96-a55f-3a8597420c5e.webp" alt="Autumn Winter 2024 Collection" class="background-img w-100 h-100 object-fit-cover">
-          <div class="content position-absolute bottom-0 start-0 end-0 p-4 text-center text-white">
-            <h2 class="display-4 font-weight-bold mb-3">Autumn Winter 2024 Collection</h2>
+        <div class="image-container">
+          <img src="images/AW24_Collection.webp" alt="Autumn Winter 2024 Collection">
+          <div class="content">
+            <h2>Autumn Winter 2024 Collection</h2>
             <a href="#" class="btn btn-light btn-lg">Discover Now</a>
           </div>
         </div>
@@ -160,98 +102,80 @@
     </div>
   </section>
 
-  <!-- Horizontal Scrolling Section with 4 Images -->
-<section class="scroll-section container-fluid py-5">
-    <div class="row flex-nowrap overflow-auto">
+  <section class="container-fluid scroll-section">
+    <div class="row flex-nowrap">
       <div class="col-4 px-2 mb-4">
         <a href="#" class="image-link d-block">
-          <img src="mtm.webp" alt="MTM" class="image w-100 h-100 object-fit-cover">
+          <img src="images/mtm.webp" alt="MTM" class="image">
         </a>
       </div>
-  
       <div class="col-4 px-2 mb-4">
         <a href="#" class="image-link d-block">
-          <img src="bespoke.webp" alt="BESPOKE" class="image w-100 h-100 object-fit-cover">
+          <img src="images/bespoke.webp" alt="BESPOKE" class="image">
         </a>
       </div>
-  
       <div class="col-4 px-2 mb-4">
         <a href="#" class="image-link d-block">
-          <img src="military.webp" alt="MILITARY" class="image w-100 h-100 object-fit-cover">
-        </a>
-      </div>
-  
-      <div class="col-4 px-2 mb-4">
-        <a href="#" class="image-link d-block">
+          <img src="images/military.webp" alt="MILITARY" class="image">
         </a>
       </div>
     </div>
   </section>
-  
-  <!-- Footer Section -->
-<footer class="footer">
+
+  <footer class="footer">
     <div class="footer-content">
-        <div class="footer-column">
-            <h3>USEFUL LINKS</h3>
-            <ul>
-                <li><a href="#">Our Stores</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Delivery Information</a></li>
-                <li><a href="#">Returns Information</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
-            </ul>
+      <div class="footer-column">
+        <h3>USEFUL LINKS</h3>
+        <ul>
+          <li><a href="#">Our Stores</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Delivery Information</a></li>
+          <li><a href="#">Returns Information</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>SERVICES</h3>
+        <ul>
+          <li><a href="#">Made to Measure</a></li>
+          <li><a href="#">Bespoke Tailoring</a></li>
+          <li><a href="#">Military Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>READY TO WEAR</h3>
+        <ul>
+          <li><a href="#">Suits</a></li>
+          <li><a href="#">Shirts</a></li>
+          <li><a href="#">Outerwear</a></li>
+          <li><a href="#">Knitwear</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>STAY IN THE KNOW</h3>
+        <form>
+          <input type="email" placeholder="Enter email here" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p>Sign up with your email address to receive exclusive updates.</p>
+        <div class="social-media">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
-
-        <div class="footer-column">
-            <h3>SERVICES</h3>
-            <ul>
-                <li><a href="#">Made to Measure</a></li>
-                <li><a href="#">Bespoke Tailoring</a></li>
-                <li><a href="#">Military Services</a></li>
-            </ul>
+        <div class="country">
+          <p>Pakistan (PKR Rs)</p>
         </div>
-
-        <div class="footer-column">
-            <h3>READY TO WEAR</h3>
-            <ul>
-                <li><a href="#">Suits</a></li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Knitwear</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h3>STAY IN THE KNOW</h3>
-            <form>
-                <input type="email" placeholder="Enter email here" required>
-                <button type="submit">Subscribe</button>
-            </form>
-            <p>Sign up with your email address to receive exclusive updates from Gieves and Hawkes.</p>
-            <div class="social-media">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
-            </div>
-            <div class="country">
-                <p>Pakistan (PKR Rs)</p>
-            </div>
-        </div>
+      </div>
     </div>
-
     <div class="footer-bottom">
-        <p>&copy; 2025, Gieves & Hawkes. All rights reserved.</p>
-        <p>Website by Webgro</p>
+      <p>&copy; 2025, Gieves & Hawkes. All rights reserved.</p>
+      <p>Website by Webgro</p>
     </div>
-</footer>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
-</html>
-

@@ -1,0 +1,229 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Header & Navigation */
+  header {
+    background-color: #1c1b1b;
+  }
+  
+  .navbar {
+    background-color: #41495d;
+    padding: 15px 30px;
+  }
+  
+  .navbar-brand img {
+    height: 50px;
+  }
+  
+  .nav-link {
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #41a1e6 !important;
+  }
+  
+  /* Luxury Knitwear Section */
+  .luxury-knitwear {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+  }
+  
+  .luxury-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .luxury-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .luxury-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Image Sections */
+  .image-container {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container:hover {
+    transform: scale(1.02);
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .image-container .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .image-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  /* Scroll Section */
+  .scroll-section {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 2rem 0;
+  }
+  
+  .scroll-section .row {
+    display: inline-flex;
+    flex-wrap: nowrap;
+  }
+  
+  .scroll-section .col-4 {
+    flex: 0 0 auto;
+    width: 300px;
+    padding: 0 10px;
+  }
+  
+  .scroll-section .image {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #41495d;
+    padding: 3rem 1rem;
+    color: white;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column a:hover {
+    color: #41a1e6;
+  }
+  
+  .footer-column input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .footer-column button {
+    background-color: #41a1e6;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-column button:hover {
+    background-color: #1d78a2;
+  }
+  
+  .social-media {
+    margin: 1rem 0;
+  }
+  
+  .social-media a {
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #555;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .luxury-content h2 {
+      font-size: 2rem;
+    }
+    
+    .luxury-content p {
+      font-size: 1.2rem;
+    }
+    
+    .image-container {
+      height: 350px;
+    }
+    
+    .footer-column {
+      flex: 100%;
+    }
+  }
