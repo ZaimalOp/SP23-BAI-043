@@ -1,0 +1,43 @@
+<%- contentFor('body') %>
+
+<div class="container-fluid">
+    <div class="row">
+        <%- include('../partials/messages') %>
+        
+        <h2>Manage Users</h2>
+        <p>This is where you can manage user accounts.</p>
+
+        <% if (users.length > 0) { %>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Admin</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(user => { %>
+                        <tr>
+                            <td><%= user.name %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.role %></td>
+                            <td><%= user.isAdmin ? 'Yes' : 'No' %></td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                                <form action="/admin/users/delete" method="POST" style="display: inline;">
+                                    <input type="hidden" name="userId" value="<%= user._id %>">
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No users found.</p>
+        <% } %>
+    </div>
+</div> 

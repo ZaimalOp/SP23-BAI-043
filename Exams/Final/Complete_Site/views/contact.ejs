@@ -1,0 +1,75 @@
+<!-- File: views/contact.ejs -->
+
+<%- include('partials/header.ejs') %>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">Contact Us / Submit Complaint</h2>
+                </div>
+                <div class="card-body">
+                    <% if (locals.errorMessage) { %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= errorMessage %>
+                        </div>
+                    <% } %>
+                    
+                    <% if (locals.successMessage) { %>
+                        <div class="alert alert-success" role="alert">
+                            <%= successMessage %>
+                        </div>
+                    <% } %>
+
+                    <form action="/contact" method="POST">
+                        <div class="mb-3">
+                            <label for="orderId" class="form-label">Order ID *</label>
+                            <input type="text" class="form-control" id="orderId" name="orderId" required>
+                            <div class="form-text">Please enter the Order ID from your order confirmation email.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Complaint Message *</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Please describe your issue or complaint in detail..."></textarea>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Submit Complaint</button>
+                            <a href="/my-complaints" class="btn btn-outline-secondary">View My Complaints</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.form-control:focus {
+    border-color: #41495d;
+    box-shadow: 0 0 0 0.2rem rgba(65, 73, 93, 0.25);
+}
+
+.btn-primary {
+    background-color: #41495d;
+    border-color: #41495d;
+}
+
+.btn-primary:hover {
+    background-color: #2c313d;
+    border-color: #2c313d;
+}
+</style>
+
+<%- include('partials/footer.ejs') %>

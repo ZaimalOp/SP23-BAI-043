@@ -1,0 +1,19 @@
+<nav class="main-nav">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <% if (locals.user) { %>
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="/my-orders">My Orders</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/my-complaints">My Complaints</a></li>
+            <% if (locals.user.isAdmin) { %>
+                <li><a href="/admin">Admin Panel</a></li>
+            <% } %>
+            <li><a href="/auth/logout">Logout</a></li>
+        <% } else { %>
+            <li><a href="/auth/login">Login</a></li>
+            <li><a href="/auth/register">Register</a></li>
+        <% } %>
+    </ul>
+</nav> 

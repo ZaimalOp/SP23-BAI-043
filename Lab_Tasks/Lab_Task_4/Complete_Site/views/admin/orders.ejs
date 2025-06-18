@@ -1,0 +1,143 @@
+<!-- Main content -->
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Manage Orders</h1>
+    </div>
+
+    <% if (locals.messages && messages.error) { %>
+        <div class="alert alert-danger"><%= messages.error %></div>
+    <% } %>
+    <% if (locals.messages && messages.success) { %>
+        <div class="alert alert-success"><%= messages.success %></div>
+    <% } %>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Shipping Address</th>
+                    <th>Payment Method</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (orders && orders.length > 0) { %>
+                    <% orders.forEach(order => { %>
+                        <tr>
+                            <td>
+                                <small class="text-muted">#<%= order._id.toString().slice(-6) %></small>
+                            </td>
+                            <td>
+                                <strong><%= order.user.name %></strong><br>
+                                <small class="text-muted"><%= order.user.email %></small>
+                            </td>
+                            <td>
+                                <%= new Date(order.createdAt).toLocaleDateString() %><br>
+                                <small class="text-muted"><%= new Date(order.createdAt).toLocaleTimeString() %></small>
+                            </td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    <% order.items.forEach(item => { %>
+                                        <li class="mb-2">
+                                            <div class="d-flex align-items-center">
+                                                <% if (item.product.imageUrl) { %>
+                                                    <img src="<%= item.product.imageUrl %>" alt="<%= item.product.name %>" 
+                                                         class="me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                                                <% } %>
+                                                <div>
+                                                    <strong><%= item.product.name %></strong><br>
+                                                    <small class="text-muted">
+                                                        Quantity: <%= item.quantity %> x $<%= item.price.toFixed(2) %>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <% }); %>
+                                </ul>
+                            </td>
+                            <td>
+                                <strong>$<%= order.total.toFixed(2) %></strong>
+                            </td>
+                            <td>
+                                <small>
+                                    <%= order.shippingAddress.name %><br>
+                                    <%= order.shippingAddress.address %><br>
+                                    <%= order.shippingAddress.city %>, <%= order.shippingAddress.postalCode %><br>
+                                    Phone: <%= order.shippingAddress.phone %>
+                                </small>
+                            </td>
+                            <td>
+                                <span class="badge bg-info">
+                                    <%= order.paymentMethod.replace('_', ' ').toUpperCase() %>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="badge bg-<%= order.status === 'delivered' ? 'success' : 
+                                                       order.status === 'shipped' ? 'info' : 
+                                                       order.status === 'processing' ? 'warning' : 
+                                                       order.status === 'cancelled' ? 'danger' : 'secondary' %>">
+                                    <%= order.status.charAt(0).toUpperCase() + order.status.slice(1) %>
+                                </span>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                        Update Status
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <form action="/admin/orders/<%= order._id %>/status" method="POST" class="dropdown-item">
+                                                <input type="hidden" name="status" value="pending">
+                                                <button type="submit" class="btn btn-link text-decoration-none">Mark as Pending</button>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="/admin/orders/<%= order._id %>/status" method="POST" class="dropdown-item">
+                                                <input type="hidden" name="status" value="processing">
+                                                <button type="submit" class="btn btn-link text-decoration-none">Mark as Processing</button>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="/admin/orders/<%= order._id %>/status" method="POST" class="dropdown-item">
+                                                <input type="hidden" name="status" value="shipped">
+                                                <button type="submit" class="btn btn-link text-decoration-none">Mark as Shipped</button>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="/admin/orders/<%= order._id %>/status" method="POST" class="dropdown-item">
+                                                <input type="hidden" name="status" value="delivered">
+                                                <button type="submit" class="btn btn-link text-decoration-none">Mark as Delivered</button>
+                                            </form>
+                                        </li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li>
+                                            <form action="/admin/orders/<%= order._id %>/status" method="POST" class="dropdown-item">
+                                                <input type="hidden" name="status" value="cancelled">
+                                                <button type="submit" class="btn btn-link text-decoration-none text-danger">Cancel Order</button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="9" class="text-center py-4">
+                            <div class="text-muted">
+                                <i class="fas fa-shopping-cart fa-2x mb-2"></i>
+                                <p>No orders found</p>
+                            </div>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</main> 

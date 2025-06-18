@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title + ' - My Store' : 'My Store' %></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/white-logo.avif" alt="Gieves & Hawkes Logo">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="/products">SALE</a></li>
+                <li><a href="/products">READY TO WEAR</a></li>
+                <li><a href="/made-to-measure">MADE TO MEASURE</a></li>
+                <li><a href="/bespoke">BESPOKE</a></li>
+                <li><a href="/military">MILITARY</a></li>
+                <li><a href="/history">HISTORY</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-icons">
+            <a href="/search"><i class="fa-solid fa-magnifying-glass"></i></a>
+            
+            <% if (locals.user) { %>
+                <a href="/profile"><i class="fa-solid fa-user"></i></a>
+                <a href="/cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                
+                <a href="/contact" class="btn btn-outline-light ms-3">Contact Us</a>
+                <a href="/my-complaints" class="btn btn-outline-light">My Complaints</a>
+                <% if (locals.user.role === 'admin') { %>
+                    <a href="/admin" class="admin-link btn btn-warning ms-3">
+                        <i class="fas fa-cog"></i> Admin Panel
+                    </a>
+                    <a href="/admin/complaints" class="admin-link btn btn-info">
+                        <i class="fas fa-file-alt"></i> All Complaints
+                    </a>
+                    <% } %>
+                
+                <a href="/auth/logout" class="logout-link ms-3">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+
+            <% } else { %>
+                <a href="/auth/login" class="btn btn-outline-light">
+                    <i class="fa-solid fa-user"></i> Login
+                </a>
+                <a href="/auth/register" class="btn btn-light ms-2">Register</a>
+                <a href="/cart" class="ms-3"><i class="fa-solid fa-bag-shopping"></i></a>
+            <% } %>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse('<%- JSON.stringify(locals.user || null) %>');
+            console.log('Header rendered. locals.user:', userData);
+        });
+    </script>
+</body>
+</html>

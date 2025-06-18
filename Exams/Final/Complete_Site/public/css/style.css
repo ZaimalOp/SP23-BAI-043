@@ -1,0 +1,49 @@
+/* Header Icons and Buttons */
+.header-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #ffc107;
+}
+
+.header-icons .btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.header-icons .admin-link {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+}
+
+.header-icons .admin-link:hover {
+    background-color: #ffca2c;
+    color: #000;
+}
+
+.header-icons .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-icons .btn-light {
+    background-color: white;
+    color: #000;
+}
+
+.header-icons .btn-light:hover {
+    background-color: #f8f9fa;
+    color: #000;
+} 

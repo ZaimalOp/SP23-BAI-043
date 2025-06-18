@@ -1,0 +1,116 @@
+<%- include('partials/header') %>
+
+<div class="container py-5">
+    <div class="row">
+        <!-- Profile Information -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Profile Information</h5>
+                    <form action="/profile/update" method="POST">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.firstName %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.lastName %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" value="<%= user.phone %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" name="address" rows="3"><%= user.address %></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Change Password -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Change Password</h5>
+                    <form action="/profile/change-password" method="POST">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword" name="currentPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Change Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order History -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Recent Orders</h5>
+                    <% if (orders.length > 0) { %>
+                        <% orders.forEach(order => { %>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div>
+                                            <h6 class="mb-1">Order #<%= order._id %></h6>
+                                            <small class="text-muted">
+                                                <%= new Date(order.createdAt).toLocaleDateString() %>
+                                            </small>
+                                        </div>
+                                        <span class="badge bg-<%= order.status === 'pending' ? 'warning' : 
+                                                            order.status === 'processing' ? 'info' : 
+                                                            order.status === 'shipped' ? 'primary' : 
+                                                            order.status === 'delivered' ? 'success' : 'secondary' %>">
+                                            <%= order.status.charAt(0).toUpperCase() + order.status.slice(1) %>
+                                        </span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="mb-1">
+                                                <strong>Total Items:</strong> <%= order.items.length %>
+                                            </p>
+                                            <p class="mb-0">
+                                                <strong>Total Amount:</strong> $<%= order.totalAmount.toFixed(2) %>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6 text-md-end">
+                                            <a href="/profile/orders/<%= order._id %>" class="btn btn-outline-primary btn-sm">
+                                                View Details
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <div class="text-center py-4">
+                            <i class="fas fa-shopping-bag fa-3x mb-3 text-muted"></i>
+                            <h5>No Orders Yet</h5>
+                            <p class="text-muted">Start shopping to see your orders here.</p>
+                            <a href="/products" class="btn btn-primary mt-2">
+                                Browse Products
+                            </a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %> 

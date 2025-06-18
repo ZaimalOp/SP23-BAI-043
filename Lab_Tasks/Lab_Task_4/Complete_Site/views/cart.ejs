@@ -1,0 +1,194 @@
+<div class="cart-container">
+    <h1>Shopping Cart</h1>
+
+    <% if (cart.items.length === 0) { %>
+        <div class="empty-cart">
+            <p>Your cart is empty</p>
+            <a href="/products" class="button">Continue Shopping</a>
+        </div>
+    <% } else { %>
+        <div class="cart-items">
+            <% cart.items.forEach(item => { %>
+                <div class="cart-item">
+                    <div class="item-details">
+                        <h3><%= item.name %></h3>
+                        <p class="price">$<%= item.price.toFixed(2) %></p>
+                        <form action="/cart/update-session/<%= item.productId %>" method="POST" class="quantity-form">
+                            <label for="quantity">Quantity:</label>
+                            <select name="quantity" id="quantity" onchange="this.form.submit()">
+                                <% for(let i = 1; i <= 10; i++) { %>
+                                    <option value="<%= i %>" <%= item.quantity === i ? 'selected' : '' %>><%= i %></option>
+                                <% } %>
+                            </select>
+                        </form>
+                        <p class="subtotal">Subtotal: $<%= item.subtotal.toFixed(2) %></p>
+                        <form action="/cart/remove-session/<%= item.productId %>" method="POST" class="remove-form">
+                            <button type="submit" class="remove-button">Remove</button>
+                        </form>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+        <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span>$<%= cart.total.toFixed(2) %></span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span>Free</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span>$<%= cart.total.toFixed(2) %></span>
+            </div>
+            <a href="/checkout" class="checkout-button">Proceed to Checkout</a>
+        </div>
+    <% } %>
+</div>
+
+<style>
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-items {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    gap: 20px;
+}
+
+.item-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.quantity-form {
+    margin: 10px 0;
+}
+
+.quantity-form select {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+}
+
+.cart-summary {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #41495d;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.checkout-button:hover {
+    background-color: #2c313d;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.empty-cart .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #41495d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+</style>
+
+<script>
+async function updateQuantity(productId, action, value = null) {
+    let quantity;
+    const input = document.querySelector(`.cart-item[data-product-id="${productId}"] .quantity-input`);
+    
+    if (action === 'increase') {
+        quantity = parseInt(input.value) + 1;
+    } else if (action === 'decrease') {
+        quantity = parseInt(input.value) - 1;
+    } else {
+        quantity = parseInt(value);
+    }
+
+    if (quantity < 1) return;
+
+    try {
+        const response = await fetch('/cart/update', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ productId, quantity })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            location.reload();
+        }
+    } catch (error) {
+        console.error('Error updating cart:', error);
+    }
+}
+
+async function removeItem(productId) {
+    if (confirm('Are you sure you want to remove this item?')) {
+        window.location.href = `/cart/remove/${productId}`;
+    }
+}
+
+async function clearCart() {
+    if (confirm('Are you sure you want to clear your cart?')) {
+        window.location.href = '/cart/clear';
+    }
+}
+</script> 
